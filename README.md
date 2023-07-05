@@ -1,8 +1,8 @@
-# introduction
+# Introduction
 
 The best Xray one-click installation script & management script
 
-# features
+# Features
 
 - quick installation
 - Invincible and easy to use
@@ -27,7 +27,7 @@ The best Xray one-click installation script & management script
 - One-click change (port/UUID/password/domain name/path/encryption method/SNI/dynamic port/etc...)
 - there are more...
 
-# design concept
+# Design concept
 
 The design concept is: **high efficiency, super fast, extremely easy to use**
 
@@ -41,7 +41,7 @@ For example, adding a configuration takes less than 1 second! The addition is do
 
 The parameters of the script are very efficient and super easy to use, please master the use of parameters
 
-# help
+# Help
 
 Use: `xray help`
 
