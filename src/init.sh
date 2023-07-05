@@ -1,6 +1,6 @@
 #!/bin/bash
 
-author=233boy
+author=233boy (Translated by sherlockmac)
 # github=https://github.com/233boy/xray
 
 # bash fonts colors
@@ -61,7 +61,7 @@ amd64 | x86_64)
     caddy_arch="arm64"
     ;;
 *)
-    err "此脚本仅支持 64 位系统..."
+    err "This script only supports 64-bit systems..."
     ;;
 esac
 
