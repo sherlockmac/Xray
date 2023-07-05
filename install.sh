@@ -1,6 +1,6 @@
 #!/bin/bash
 
-author=233boy_Translated_by_sherlockmac
+author=sherlockmac
 # github=https://github.com/233boy/xray
 
 # bash fonts colors
