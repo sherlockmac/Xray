@@ -2,6 +2,11 @@
 
 The best Xray one-click installation script & management script
 
+# Installation
+``` bash
+bash <(wget -qO- -o- https://github.com/sherlockmac/Xray/raw/main/install.sh)
+```
+
 # Features
 
 - quick installation
