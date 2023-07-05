@@ -1342,7 +1342,7 @@ get() {
         ;;
     dynamic-port-test) # test dynamic port
         [[ ! $(is_test port ${is_use_dynamic_port_start}) || ! $(is_test port ${is_use_dynamic_port_end}) ]] && {
-             err "Could not handle dynamic port ($is_use_dynamic_port_start-$is_use_dynamic_port_end) range correctly."
+            err "Could not handle dynamic port ($is_use_dynamic_port_start-$is_use_dynamic_port_end) range correctly."
         }
         [[ $(is_test port_used $is_use_dynamic_port_start) ]] && {
             err "Dynamic port ($is_use_dynamic_port_start-$is_use_dynamic_port_end), but ($is_use_dynamic_port_start) port cannot be used."
@@ -1362,16 +1362,16 @@ get() {
         [[ $is_no_auto_tls || $is_gen ]] && return
         get_ip
         get ping
-        if [[ ! $(grep $ip <<< $is_host_dns) ]]; then
+        if [[ ! $(grep $ip <<<$is_host_dns) ]]; then
             msg "\nPlease resolve ($(_red_bg $host)) to ($(_red_bg $ip))"
             msg "\nIf using Cloudflare, in DNS; off (Proxy status / proxy status), ie (DNS only / DNS only)"
             ask string y "I've made sure to resolve [y]:"
             get ping
-            if [[ ! $(grep $ip <<< $is_host_dns) ]]; then
+            if [[ ! $(grep $ip <<<$is_host_dns) ]]; then
                 _cyan "\nTest result: $is_host_dns"
                 err "The domain name ($host) did not resolve to ($ip)"
-            the fi
-        the fi
+            fi
+        fi
         ;;
     ssss | ss2022)
         openssl rand -base64 32
@@ -1386,14 +1386,14 @@ get() {
         [[ $1 == 'logerr' ]] && tail -f $is_log_dir/error.log
         ;;
     install-caddy)
-       _green "\nInstall Caddy to automatically configure TLS.\n"
-       load download.sh
-       download caddy
-       load systemd.sh
-       install_service caddy &> /dev/null
-       is_caddy=1
-       _green "Caddy installed successfully.\n"
-       ;;
+        _green "\nInstall Caddy to automatically configure TLS.\n"
+        load download.sh
+        download caddy
+        load systemd.sh
+        install_service caddy &>/dev/null
+        is_caddy=1
+        _green "Caddy installed successfully.\n"
+        ;;
     reinstall)
         is_install_sh=$(cat $is_sh_dir/install.sh)
         uninstall
@@ -1408,30 +1408,30 @@ get() {
         is_no_manage_msg=1
         if [[ ! $(pgrep -f $is_core_bin) ]]; then
             _yellow "\nTest run $is_core_name ..\n"
-            manage start &> /dev/null
+            manage start &>/dev/null
             if [[ $is_run_fail == $is_core ]]; then
                 _red "$is_core_name failed to run:"
                 $is_core_bin run -c $is_config_json -confdir $is_conf_dir
             else
                 _green "\nTest passed, started $is_core_name ..\n"
-            the fi
+            fi
         else
             _green "\n$is_core_name is running, skipping tests\n"
-        the fi
+        fi
         if [[ $is_caddy ]]; then
             if [[ ! $(pgrep -f $is_caddy_bin) ]]; then
                 _yellow "\nTest run Caddy ..\n"
-                manage start caddy &> /dev/null
+                manage start caddy &>/dev/null
                 if [[ $is_run_fail == 'caddy' ]]; then
                     _red "Caddy failed to run with message:"
                     $is_caddy_bin run --config $is_caddyfile
                 else
                     _green "\nTest passed, Caddy started..\n"
-                the fi
+                fi
             else
                 _green "\nCaddy is running, skipping tests\n"
-            the fi
-        the fi
+            fi
+        fi
         ;;
     esac
 }
@@ -1530,12 +1530,12 @@ info() {
         msg "\e[4;${is_color}m${is_url}\e[0m"
     fi
     if [[ $is_no_auto_tls ]]; then
-       is_tmp_path=$path
-       [[ $net == 'grpc' ]] && is_tmp_path="/$path/*"
-       msg "------------- no-auto-tls INFO -------------"
-       msg "Port: $port"
-       msg "Path: $is_tmp_path"
-       msg "\e[41mHelp\e[0m: $(msg_ul https://233boy.com/$is_core/no-auto-tls/)"
+        is_tmp_path=$path
+        [[ $net == 'grpc' ]] && is_tmp_path="/$path/*"
+        msg "------------- no-auto-tls INFO -------------"
+        msg "Port: $port"
+        msg "Path: $is_tmp_path"
+        msg "\e[41mHelp\e[0m: $(msg_ul https://233boy.com/$is_core/no-auto-tls/)"
     fi
     footer_msg
 }
