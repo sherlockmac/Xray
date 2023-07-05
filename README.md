@@ -1,120 +1,116 @@
-# 介绍
+# introduction
 
-最好用的 Xray 一键安装脚本 & 管理脚本
+The best Xray one-click installation script & management script
 
-# 特点
+# features
 
-- 快速安装
-- 无敌好用
-- 零学习成本
-- 自动化 TLS
-- 简化所有流程
-- 屏蔽 BT
-- 屏蔽中国 IP
-- 使用 API 操作
-- 兼容 Xray 命令
-- 强大的快捷参数
-- 支持所有常用协议
-- 一键添加 Shadowsocks 2022
-- 一键添加 VMess-(TCP/mKCP/QUIC)
-- 一键添加 VMess-(WS/H2/gRPC)-TLS
-- 一键添加 VLESS-(WS/H2/gRPC)-TLS
-- 一键添加 Trojan-(WS/H2/gRPC)-TLS
-- 一键添加 VLESS-XTLS-uTLS-REALITY
-- 一键添加 VMess-(TCP/mKCP/QUIC) 动态端口
-- 一键启用 BBR
-- 一键更改伪装网站
-- 一键更改 (端口/UUID/密码/域名/路径/加密方式/SNI/动态端口/等...)
-- 还有更多...
+- quick installation
+- Invincible and easy to use
+- Zero learning cost
+- Automated TLS
+- Simplify all processes
+- Block BT
+- Block Chinese IP
+- Use API operations
+- Compatible with Xray commands
+- Powerful shortcut parameters
+- Supports all common protocols
+- Add Shadowsocks 2022 with one click
+- Add VMess-(TCP/mKCP/QUIC) with one click
+- Add VMess-(WS/H2/gRPC)-TLS with one click
+- Add VLESS-(WS/H2/gRPC)-TLS with one click
+- Add Trojan-(WS/H2/gRPC)-TLS with one click
+- Add VLESS-XTLS-uTLS-REALITY with one click
+- Add VMess-(TCP/mKCP/QUIC) dynamic ports with one click
+- Enable BBR with one click
+- Change the fake website with one click
+- One-click change (port/UUID/password/domain name/path/encryption method/SNI/dynamic port/etc...)
+- there are more...
 
-# 设计理念
+# design concept
 
-设计理念为：**高效率，超快速，极易用**
+The design concept is: **high efficiency, super fast, extremely easy to use**
 
-脚本基于作者的自身使用需求，以 **多配置同时运行** 为核心设计
+The script is based on the author's own needs, with **Multiple configurations running at the same time** as the core design
 
-并且专门优化了，添加、更改、查看、删除、这四项常用功能
+And specially optimized, add, change, view, delete, these four commonly used functions
 
-你只需要一条命令即可完成 添加、更改、查看、删除、等操作
+You only need one command to add, change, view, delete, etc.
 
-例如，添加一个配置仅需不到 1 秒！瞬间完成添加！其他操作亦是如此！
+For example, adding a configuration takes less than 1 second! The addition is done in an instant! The same goes for other operations!
 
-脚本的参数非常高效率并且超级易用，请掌握参数的使用
+The parameters of the script are very efficient and super easy to use, please master the use of parameters
 
-# 文档
+# help
 
-安装及使用：https://233boy.com/xray/xray-script/
-
-# 帮助
-
-使用：`xray help`
+Use: `xray help`
 
 ```
 Xray script v1.0 by 233boy
 Usage: xray [options]... [args]...
 
-基本:
-   v, version                                      显示当前版本
-   ip                                              返回当前主机的 IP
-   pbk                                             同等于 xray x25519
-   get-port                                        返回一个可用的端口
-   ss2022                                          返回一个可用于 Shadowsocks 2022 的密码
+Basic:
+    v, version show current version
+    ip returns the IP of the current host
+    pbk is equivalent to xray x25519
+    get-port returns an available port
+    ss2022 returns a cipher that can be used with Shadowsocks 2022
 
-一般:
-   a, add [protocol] [args... | auto]              添加配置
-   c, change [name] [option] [args... | auto]      更改配置
-   d, del [name]                                   删除配置**
-   i, info [name]                                  查看配置
-   qr [name]                                       二维码信息
-   url [name]                                      URL 信息
-   log                                             查看日志
-   logerr                                          查看错误日志
+generally:
+    a, add [protocol] [args... | auto] add configuration
+    c, change [name] [option] [args... | auto] change configuration
+    d, del [name] delete configuration**
+    i, info [name] view configuration
+    qr [name] QR code information
+    url [name] URL information
+    log view log
+    logerr view error log
 
-更改:
-   dp, dynamicport [name] [start | auto] [end]     更改动态端口
-   full [name] [...]                               更改多个参数
-   id [name] [uuid | auto]                         更改 UUID
-   host [name] [domain]                            更改域名
-   port [name] [port | auto]                       更改端口
-   path [name] [path | auto]                       更改路径
-   passwd [name] [password | auto]                 更改密码
-   key [name] [Private key | atuo] [Public key]    更改密钥
-   type [name] [type | auto]                       更改伪装类型
-   method [name] [method | auto]                   更改加密方式
-   sni [name] [ ip | domain]                       更改 serverName
-   seed [name] [seed | auto]                       更改 mKCP seed
-   new [name] [...]                                更改协议
-   web [name] [domain]                             更改伪装网站
+Change:
+    dp, dynamicport [name] [start | auto] [end] change dynamic port
+    full [name] [...] Change multiple parameters
+    id [name] [uuid | auto] Change UUID
+    host [name] [domain] change domain name
+    port [name] [port | auto] change port
+    path [name] [path | auto] change path
+    passwd [name] [password | auto] change password
+    key [name] [Private key | atuo] [Public key] change key
+    type [name] [type | auto] Change masquerade type
+    method [name] [method | auto] Change the encryption method
+    sni [name] [ip | domain] change serverName
+    seed [name] [seed | auto] Change mKCP seed
+    new [name] [...] Change protocol
+    web [name] [domain] Change masquerade website
 
-进阶:
-   dd, ddel [name...]                              删除多个配置**
-   fix [name]                                      修复一个配置
-   fix-all                                         修复全部配置
-   fix-config.json                                 修复 config.json
+Advanced:
+    dd, ddel [name...] delete multiple configurations**
+    fix [name] fix a configuration
+    fix-all fix all configuration
+    fix-config.json fixes config.json
 
-管理:
-   un, uninstall                                   卸载
-   u, update [core | sh | caddy] [ver]             更新
-   U, update.sh                                    更新脚本
-   s, status                                       运行状态
-   start, stop, restart [caddy]                    启动, 停止, 重启
-   t, test                                         测试运行
-   reinstall                                       重装脚本
+manage:
+    un, uninstall Uninstall
+    u, update [core | sh | caddy] [ver] update
+    U, update.sh update script
+    s, status running status
+    start, stop, restart [caddy] start, stop, restart
+    t, test test run
+    reinstall reinstallation script
 
-测试:
-   client, genc [name]                             显示用于客户端 JOSN, 仅供参考
-   debug [name]                                    显示一些 debug 信息, 仅供参考
-   gen [...]                                       同等于 add, 但只显示 JSON 内容, 不创建文件, 测试使用
-   no-auto-tls [...]                               同等于 add, 但禁止自动配置 TLS, 可用于 *TLS 相关协议
-   xapi [...]                                      同等于 xray api, 但 API 后端使用当前运行的 Xray 服务
+test:
+    client, genc [name] show JSON for client, for reference only
+    debug [name] show some debug information, just for reference
+    gen [...] is equivalent to add, but only displays JSON content, does not create files, test use
+    no-auto-tls [...] is equivalent to add, but disables automatic configuration of TLS, can be used for *TLS related protocols
+    xapi [...] is equivalent to xray api, but the API backend uses the currently running Xray service
 
-其他:
-   bbr                                             启用 BBR, 如果支持
-   bin [...]                                       运行 Xray 命令, 例如: xray bin help
-   api, x25519, tls, run, uuid  [...]              兼容 Xray 命令
-   h, help                                         显示此帮助界面
+other:
+    bbr enable BBR, if supported
+    bin [...] Run Xray commands, eg: xray bin help
+    api, x25519, tls, run, uuid [...] compatible with Xray commands
+    h, help display this help interface
 
-谨慎使用 del, ddel, 此选项会直接删除配置; 无需确认
-反馈问题) https://github.com/233boy/xray/issues
-文档(doc) https://233boy.com/xray/xray-script/
+Use del, ddel with caution, this option will delete the configuration directly; no confirmation required
+Original Feedback issues) https://github.com/233boy/xray/issues
+Original Documentation (doc) https://233boy.com/xray/xray-script/
 ```
