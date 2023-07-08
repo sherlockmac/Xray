@@ -34,8 +34,8 @@ _mkdir() {
     mkdir -p "$@"
 }
 
-is_err=$(_red_bg 错误!)
-is_warn=$(_red_bg 警告!)
+is_err=$(_red_bg error!)
+is_warn=$(_red_bg warning!)
 
 err() {
     echo -e "\n$is_err $@\n"
